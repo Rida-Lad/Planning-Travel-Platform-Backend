@@ -6,10 +6,12 @@ def create_app():
     CORS(app)
     
     # Register blueprints
-    from .routes import cost_calculation,cost_calculation2, bus_options
+    from .routes import cost_calculation,cost_calculation2, bus_options, train_options, plane_options
     app.register_blueprint(cost_calculation.bp)
     app.register_blueprint(cost_calculation2.bp)
     app.register_blueprint(bus_options.travel_bp)
+    app.register_blueprint(train_options.travel_bp)
+    app.register_blueprint(plane_options.travel_bp)
     
         
     return app
